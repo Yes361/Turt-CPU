@@ -1,0 +1,855 @@
+(204, 204, 252)
+opcode: (204, 204, 252) operands: (173, 255, 255), (255, 255, 255)
+False False False False False False
+[0, 0] spd 83
+
+(221, 254, 2)
+opcode: (220, 252, 0) operands: (100, 100, 100), (0, 0, 0)
+True False False False True True
+[0, 1] mov reg[2], ram[0]
+
+(253, 124, 82)
+opcode: (252, 124, 80) operands: (100, 100, 100), (67, 0, 0)
+True False False False False True
+[0, 2] cmp reg[2], 67
+
+(220, 49, 96)
+opcode: (220, 48, 96) operands: (13, 0, 0), (255, 255, 255)
+False True False False False False
+[0, 3] jne 13
+
+(221, 254, 2)
+opcode: (220, 252, 0) operands: (100, 100, 100), (1, 0, 0)
+True False False False True True
+[0, 4] mov reg[2], ram[1]
+
+(253, 124, 82)
+opcode: (252, 124, 80) operands: (100, 100, 100), (84, 0, 0)
+True False False False False True
+[0, 5] cmp reg[2], 84
+
+(220, 49, 96)
+opcode: (220, 48, 96) operands: (10, 0, 0), (255, 255, 255)
+False True False False False False
+[0, 6] jne 10
+
+(221, 254, 2)
+opcode: (220, 252, 0) operands: (100, 100, 100), (2, 0, 0)
+True False False False True True
+[0, 7] mov reg[2], ram[2]
+
+(253, 124, 82)
+opcode: (252, 124, 80) operands: (100, 100, 100), (70, 0, 0)
+True False False False False True
+[0, 8] cmp reg[2], 70
+
+(220, 49, 96)
+opcode: (220, 48, 96) operands: (7, 0, 0), (255, 255, 255)
+False True False False False False
+[0, 9] jne 7
+
+(221, 254, 2)
+opcode: (220, 252, 0) operands: (100, 100, 100), (3, 0, 0)
+True False False False True True
+[0, 10] mov reg[2], ram[3]
+
+(253, 124, 82)
+opcode: (252, 124, 80) operands: (100, 100, 100), (123, 0, 0)
+True False False False False True
+[0, 11] cmp reg[2], 123
+
+(220, 49, 96)
+opcode: (220, 48, 96) operands: (4, 0, 0), (255, 255, 255)
+False True False False False False
+[0, 12] jne 4
+
+(221, 254, 2)
+opcode: (220, 252, 0) operands: (100, 100, 100), (34, 0, 0)
+True False False False True True
+[0, 13] mov reg[2], ram[34]
+
+(253, 124, 82)
+opcode: (252, 124, 80) operands: (100, 100, 100), (125, 0, 0)
+True False False False False True
+[0, 14] cmp reg[2], 125
+
+(221, 48, 96)
+opcode: (220, 48, 96) operands: (2, 0, 0), (255, 255, 255)
+True False False False False False
+[0, 15] je 2
+
+(252, 0, 0)
+opcode: (252, 0, 0) operands: (255, 255, 255), (255, 255, 255)
+False False False False False False
+[0, 16] wrong flag :C
+
+(221, 253, 2)
+opcode: (220, 252, 0) operands: (0, 0, 1), (0, 0, 0)
+True True False False False True
+[0, 17] mov sp[1], 0
+
+(253, 125, 82)
+opcode: (252, 124, 80) operands: (0, 0, 1), (79, 0, 0)
+True True False False False True
+[0, 18] cmp sp[1], 79
+
+(220, 50, 96)
+opcode: (220, 48, 96) operands: (5, 0, 0), (255, 255, 255)
+False False False False True False
+[0, 19] jge 5
+
+(223, 254, 0)
+opcode: (220, 252, 0) operands: (100, 100, 100), (0, 0, 1)
+True False False True True False
+[0, 20] mov reg[2], sp[1]
+
+(221, 253, 2)
+opcode: (220, 252, 0) operands: (100, 0, 3), (0, 0, 0)
+True True False False False True
+[0, 21] mov sp[reg[2] + 3], 0
+
+(65, 225, 210)
+opcode: (64, 224, 208) operands: (0, 0, 1), (1, 0, 0)
+True True False False False True
+[0, 22] add sp[1], 1
+
+(223, 51, 96)
+opcode: (220, 48, 96) operands: (251, 255, 255), (255, 255, 255)
+True True False True True False
+[0, 23] jmp -5
+
+(221, 253, 2)
+opcode: (220, 252, 0) operands: (0, 0, 2), (4, 0, 0)
+True True False False False True
+[0, 24] mov sp[2], 4
+
+(223, 254, 0)
+opcode: (220, 252, 0) operands: (100, 100, 100), (0, 0, 2)
+True False False True True False
+[0, 25] mov reg[2], sp[2]
+
+(253, 124, 82)
+opcode: (252, 124, 80) operands: (100, 100, 100), (28, 0, 0)
+True False False False False True
+[0, 26] cmp reg[2], 28
+
+(220, 50, 96)
+opcode: (220, 48, 96) operands: (27, 0, 0), (255, 255, 255)
+False False False False True False
+[0, 27] jge 27
+
+(223, 254, 0)
+opcode: (220, 252, 0) operands: (100, 100, 100), (0, 0, 2)
+True False False True True False
+[0, 28] mov reg[2], sp[2]
+
+(221, 252, 2)
+opcode: (220, 252, 0) operands: (220, 220, 220), (0, 0, 0)
+True False False False False True
+[0, 29] mov reg[5], 0
+
+(221, 254, 0)
+opcode: (220, 252, 0) operands: (100, 100, 100), (100, 220, 0)
+True False False False True False
+[0, 30] mov reg[2], ram[reg[2] + reg[5]]
+
+(253, 124, 82)
+opcode: (252, 124, 80) operands: (100, 100, 100), (42, 0, 0)
+True False False False False True
+[0, 31] cmp reg[2], 42
+
+(223, 48, 96)
+opcode: (220, 48, 96) operands: (6, 0, 0), (255, 255, 255)
+True False False True False False
+[0, 32] je or jle 6
+
+(223, 254, 0)
+opcode: (220, 252, 0) operands: (100, 100, 100), (0, 0, 2)
+True False False True True False
+[0, 33] mov reg[2], sp[2]
+
+(221, 252, 2)
+opcode: (220, 252, 0) operands: (220, 220, 220), (0, 0, 0)
+True False False False False True
+[0, 34] mov reg[5], 0
+
+(221, 254, 0)
+opcode: (220, 252, 0) operands: (100, 100, 100), (100, 220, 0)
+True False False False True False
+[0, 35] mov reg[2], ram[reg[2] + reg[5]]
+
+(253, 124, 82)
+opcode: (252, 124, 80) operands: (100, 100, 100), (122, 0, 0)
+True False False False False True
+[0, 36] cmp reg[2], 122
+
+(223, 48, 96)
+opcode: (220, 48, 96) operands: (2, 0, 0), (255, 255, 255)
+True False False True False False
+[0, 37] je or jle 2
+
+(252, 0, 0)
+opcode: (252, 0, 0) operands: (255, 255, 255), (255, 255, 255)
+False False False False False False
+[0, 38] wrong flag :C
+
+(223, 254, 0)
+opcode: (220, 252, 0) operands: (100, 100, 100), (0, 0, 2)
+True False False True True False
+[0, 39] mov reg[2], sp[2]
+
+(221, 252, 2)
+opcode: (220, 252, 0) operands: (220, 220, 220), (0, 0, 0)
+True False False False False True
+[0, 40] mov reg[5], 0
+
+(221, 254, 0)
+opcode: (220, 252, 0) operands: (100, 100, 100), (100, 220, 0)
+True False False False True False
+[0, 41] mov reg[2], ram[reg[2] + reg[5]]
+
+(157, 224, 190)
+opcode: (156, 224, 188) operands: (100, 100, 100), (43, 0, 0)
+True False False False False True
+[0, 42] sub reg[2], 43
+
+(223, 254, 0)
+opcode: (220, 252, 0) operands: (100, 100, 100), (100, 0, 3)
+True False False True True False
+[0, 43] mov reg[2], sp[reg[2] + 3]
+
+(253, 124, 82)
+opcode: (252, 124, 80) operands: (100, 100, 100), (255, 255, 0)
+True False False False False True
+[0, 44] cmp reg[2], 65535
+
+(220, 49, 96)
+opcode: (220, 48, 96) operands: (2, 0, 0), (255, 255, 255)
+False True False False False False
+[0, 45] jne 2
+
+(252, 0, 0)
+opcode: (252, 0, 0) operands: (255, 255, 255), (255, 255, 255)
+False False False False False False
+[0, 46] wrong flag :C
+
+(223, 254, 0)
+opcode: (220, 252, 0) operands: (100, 100, 100), (0, 0, 2)
+True False False True True False
+[0, 47] mov reg[2], sp[2]
+
+(221, 252, 2)
+opcode: (220, 252, 0) operands: (220, 220, 220), (0, 0, 0)
+True False False False False True
+[0, 48] mov reg[5], 0
+
+(221, 254, 0)
+opcode: (220, 252, 0) operands: (100, 100, 100), (100, 220, 0)
+True False False False True False
+[0, 49] mov reg[2], ram[reg[2] + reg[5]]
+
+(157, 224, 190)
+opcode: (156, 224, 188) operands: (100, 100, 100), (43, 0, 0)
+True False False False False True
+[0, 50] sub reg[2], 43
+
+(221, 253, 2)
+opcode: (220, 252, 0) operands: (100, 0, 3), (255, 255, 0)
+True True False False False True
+[0, 51] mov sp[reg[2] + 3], 65535
+
+(65, 225, 210)
+opcode: (64, 224, 208) operands: (0, 0, 2), (1, 0, 0)
+True True False False False True
+[0, 52] add sp[2], 1
+
+(223, 51, 96)
+opcode: (220, 48, 96) operands: (228, 255, 255), (255, 255, 255)
+True True False True True False
+[0, 53] jmp -28
+
+(252, 0, 252)
+opcode: (252, 0, 252) operands: (3, 54, 128), (255, 255, 255)
+False False False False False False
+[0, 54] call [1, 0]
+
+(220, 253, 3)
+opcode: (220, 252, 0) operands: (7, 2, 0), (0, 0, 0)
+False True True False False True
+[0, 55] mov ram[519], 0
+
+(221, 253, 2)
+opcode: (220, 252, 0) operands: (0, 0, 0), (43, 0, 0)
+True True False False False True
+[0, 56] mov sp[0], 43
+
+(253, 125, 82)
+opcode: (252, 124, 80) operands: (0, 0, 0), (122, 0, 0)
+True True False False False True
+[0, 57] cmp sp[0], 122
+
+(220, 50, 96)
+opcode: (220, 48, 96) operands: (10, 0, 0), (255, 255, 255)
+False False False False True False
+[0, 58] jge 10
+
+(223, 254, 0)
+opcode: (220, 252, 0) operands: (100, 100, 100), (0, 0, 0)
+True False False True True False
+[0, 59] mov reg[2], sp[0]
+
+(221, 252, 2)
+opcode: (220, 252, 0) operands: (220, 220, 220), (30, 0, 0)
+True False False False False True
+[0, 60] mov reg[5], 30
+
+(221, 252, 2)
+opcode: (220, 252, 0) operands: (20, 20, 20), (35, 0, 0)
+True False False False False True
+[0, 61] mov reg[0], 35
+
+(223, 252, 0)
+opcode: (220, 252, 0) operands: (60, 60, 60), (100, 100, 100)
+True False False True False False
+[0, 62] mov reg[1], reg[2]
+
+(252, 0, 252)
+opcode: (252, 0, 252) operands: (6, 63, 128), (255, 255, 255)
+False False False False False False
+[0, 63] call [2, 0]
+
+(223, 254, 0)
+opcode: (220, 252, 0) operands: (100, 100, 100), (0, 0, 0)
+True False False True True False
+[0, 64] mov reg[2], sp[0]
+
+(65, 224, 210)
+opcode: (64, 224, 208) operands: (100, 100, 100), (1, 0, 0)
+True False False False False True
+[0, 65] add reg[2], 1
+
+(223, 253, 0)
+opcode: (220, 252, 0) operands: (0, 0, 0), (100, 100, 100)
+True True False True False False
+[0, 66] mov sp[0], reg[2]
+
+(223, 51, 96)
+opcode: (220, 48, 96) operands: (246, 255, 255), (255, 255, 255)
+True True False True True False
+[0, 67] jmp -10
+
+(0, 252, 0)
+opcode: (0, 252, 0) operands: (255, 255, 255), (255, 255, 255)
+False False False False False False
+[0, 68] correct flag!
+
+(221, 252, 2)
+opcode: (220, 252, 0) operands: (100, 100, 100), (4, 0, 0)
+True False False False False True
+[1, 0] mov reg[2], 4
+
+(223, 253, 0)
+opcode: (220, 252, 0) operands: (0, 0, 254), (100, 100, 100)
+True True False True False False
+[1, 1] mov sp[2], reg[2]
+
+(221, 253, 2)
+opcode: (220, 252, 0) operands: (0, 0, 253), (0, 0, 0)
+True True False False False True
+[1, 2] mov sp[3], 0
+
+(223, 254, 0)
+opcode: (220, 252, 0) operands: (100, 100, 100), (0, 0, 253)
+True False False True True False
+[1, 3] mov reg[2], sp[3]
+
+(253, 124, 82)
+opcode: (252, 124, 80) operands: (100, 100, 100), (29, 0, 0)
+True False False False False True
+[1, 4] cmp reg[2], 29
+
+(220, 50, 96)
+opcode: (220, 48, 96) operands: (13, 0, 0), (255, 255, 255)
+False False False False True False
+[1, 5] jge 13
+
+(223, 254, 0)
+opcode: (220, 252, 0) operands: (100, 100, 100), (0, 0, 253)
+True False False True True False
+[1, 6] mov reg[2], sp[3]
+
+(223, 252, 0)
+opcode: (220, 252, 0) operands: (220, 220, 220), (100, 100, 100)
+True False False True False False
+[1, 7] mov reg[5], reg[2]
+
+(223, 254, 0)
+opcode: (220, 252, 0) operands: (100, 100, 100), (0, 0, 254)
+True False False True True False
+[1, 8] mov reg[2], sp[2]
+
+(67, 224, 208)
+opcode: (64, 224, 208) operands: (220, 220, 220), (100, 100, 100)
+True False False True False False
+[1, 9] add reg[5], reg[2]
+
+(223, 254, 0)
+opcode: (220, 252, 0) operands: (100, 100, 100), (0, 0, 253)
+True False False True True False
+[1, 10] mov reg[2], sp[3]
+
+(221, 252, 2)
+opcode: (220, 252, 0) operands: (180, 180, 180), (65, 0, 0)
+True False False False False True
+[1, 11] mov reg[4], 65
+
+(221, 254, 0)
+opcode: (220, 252, 0) operands: (100, 100, 100), (100, 180, 0)
+True False False False True False
+[1, 12] mov reg[2], ram[reg[2] + reg[4]]
+
+(221, 254, 0)
+opcode: (220, 252, 0) operands: (220, 220, 220), (220, 0, 0)
+True False False False True False
+[1, 13] mov reg[5], ram[reg[5]]
+
+(221, 252, 2)
+opcode: (220, 252, 0) operands: (180, 180, 180), (35, 0, 0)
+True False False False False True
+[1, 14] mov reg[4], 35
+
+(222, 253, 0)
+opcode: (220, 252, 0) operands: (100, 180, 0), (220, 220, 220)
+False True False True False False
+[1, 15] mov ram[reg[2] + reg[4]], reg[5]
+
+(65, 225, 210)
+opcode: (64, 224, 208) operands: (0, 0, 253), (1, 0, 0)
+True True False False False True
+[1, 16] add sp[3], 1
+
+(223, 51, 96)
+opcode: (220, 48, 96) operands: (242, 255, 255), (255, 255, 255)
+True True False True True False
+[1, 17] jmp -14
+
+(128, 0, 128)
+opcode: (128, 0, 128) operands: (18, 0, 0), (255, 255, 255)
+False False False False False False
+[1, 18] ret 18
+
+(204, 204, 252)
+opcode: (204, 204, 252) operands: (252, 255, 255), (255, 255, 255)
+False False False False False False
+[2, 0] spd 4
+
+(223, 252, 0)
+opcode: (220, 252, 0) operands: (180, 180, 180), (60, 60, 60)
+True False False True False False
+[2, 1] mov reg[4], reg[1]
+
+(223, 253, 0)
+opcode: (220, 252, 0) operands: (0, 0, 0), (20, 20, 20)
+True True False True False False
+[2, 2] mov sp[0], reg[0]
+
+(223, 252, 0)
+opcode: (220, 252, 0) operands: (100, 100, 100), (220, 220, 220)
+True False False True False False
+[2, 3] mov reg[2], reg[5]
+
+(223, 252, 0)
+opcode: (220, 252, 0) operands: (220, 220, 220), (180, 180, 180)
+True False False True False False
+[2, 4] mov reg[5], reg[4]
+
+(223, 253, 0)
+opcode: (220, 252, 0) operands: (0, 0, 2), (220, 220, 220)
+True True False True False False
+[2, 5] mov sp[2], reg[5]
+
+(223, 253, 0)
+opcode: (220, 252, 0) operands: (0, 0, 1), (100, 100, 100)
+True True False True False False
+[2, 6] mov sp[1], reg[2]
+
+(221, 254, 2)
+opcode: (220, 252, 0) operands: (100, 100, 100), (7, 2, 0)
+True False False False True True
+[2, 7] mov reg[2], ram[519]
+
+(253, 124, 82)
+opcode: (252, 124, 80) operands: (100, 100, 100), (168, 1, 0)
+True False False False False True
+[2, 8] cmp reg[2], 424
+
+(220, 49, 96)
+opcode: (220, 48, 96) operands: (2, 0, 0), (255, 255, 255)
+False True False False False False
+[2, 9] jne 2
+
+(252, 0, 0)
+opcode: (252, 0, 0) operands: (255, 255, 255), (255, 255, 255)
+False False False False False False
+[2, 10] wrong flag :C
+
+(253, 125, 82)
+opcode: (252, 124, 80) operands: (0, 0, 1), (0, 0, 0)
+True True False False False True
+[2, 11] cmp sp[1], 0
+
+(220, 49, 96)
+opcode: (220, 48, 96) operands: (9, 0, 0), (255, 255, 255)
+False True False False False False
+[2, 12] jne 9
+
+(221, 254, 2)
+opcode: (220, 252, 0) operands: (100, 100, 100), (7, 2, 0)
+True False False False True True
+[2, 13] mov reg[2], ram[519]
+
+(253, 190, 0)
+opcode: (252, 188, 0) operands: (220, 220, 220), (100, 0, 1)
+True False False False True False
+[2, 14] mov reg[5], reg[2] + 1
+
+(222, 253, 1)
+opcode: (220, 252, 0) operands: (7, 2, 0), (220, 220, 220)
+False True True True False False
+[2, 15] mov ram[519], reg[5]
+
+(221, 252, 2)
+opcode: (220, 252, 0) operands: (220, 220, 220), (95, 0, 0)
+True False False False False True
+[2, 16] mov reg[5], 95
+
+(221, 254, 0)
+opcode: (220, 252, 0) operands: (100, 100, 100), (100, 220, 0)
+True False False False True False
+[2, 17] mov reg[2], ram[reg[2] + reg[5]]
+
+(253, 124, 82)
+opcode: (252, 124, 80) operands: (100, 100, 100), (4, 0, 0)
+True False False False False True
+[2, 18] cmp reg[2], 4
+
+(221, 48, 96)
+opcode: (220, 48, 96) operands: (62, 0, 0), (255, 255, 255)
+True False False False False False
+[2, 19] je 62
+
+(252, 0, 0)
+opcode: (252, 0, 0) operands: (255, 255, 255), (255, 255, 255)
+False False False False False False
+[2, 20] wrong flag :C
+
+(223, 254, 0)
+opcode: (220, 252, 0) operands: (100, 100, 100), (0, 0, 1)
+True False False True True False
+[2, 21] mov reg[2], sp[1]
+
+(157, 224, 190)
+opcode: (156, 224, 188) operands: (100, 100, 100), (1, 0, 0)
+True False False False False True
+[2, 22] sub reg[2], 1
+
+(101, 148, 238)
+opcode: (100, 148, 236) operands: (100, 100, 100), (1, 0, 0)
+True False False False False True
+[2, 23] shr reg[2], 1
+
+(223, 253, 0)
+opcode: (220, 252, 0) operands: (0, 0, 3), (100, 100, 100)
+True True False True False False
+[2, 24] mov sp[3], reg[2]
+
+(223, 254, 0)
+opcode: (220, 252, 0) operands: (220, 220, 220), (0, 0, 3)
+True False False True True False
+[2, 25] mov reg[5], sp[3]
+
+(223, 254, 0)
+opcode: (220, 252, 0) operands: (100, 100, 100), (0, 0, 0)
+True False False True True False
+[2, 26] mov reg[2], sp[0]
+
+(67, 224, 208)
+opcode: (64, 224, 208) operands: (100, 100, 100), (220, 220, 220)
+True False False True False False
+[2, 27] add reg[2], reg[5]
+
+(221, 254, 0)
+opcode: (220, 252, 0) operands: (100, 100, 100), (100, 0, 0)
+True False False False True False
+[2, 28] mov reg[2], ram[reg[2]]
+
+(255, 125, 80)
+opcode: (252, 124, 80) operands: (0, 0, 2), (100, 100, 100)
+True True False True False False
+[2, 29] cmp sp[2], reg[2]
+
+(221, 50, 96)
+opcode: (220, 48, 96) operands: (16, 0, 0), (255, 255, 255)
+True False False False True False
+[2, 30] je or jge 16
+
+(221, 254, 2)
+opcode: (220, 252, 0) operands: (100, 100, 100), (7, 2, 0)
+True False False False True True
+[2, 31] mov reg[2], ram[519]
+
+(253, 190, 0)
+opcode: (252, 188, 0) operands: (220, 220, 220), (100, 0, 1)
+True False False False True False
+[2, 32] mov reg[5], reg[2] + 1
+
+(222, 253, 1)
+opcode: (220, 252, 0) operands: (7, 2, 0), (220, 220, 220)
+False True True True False False
+[2, 33] mov ram[519], reg[5]
+
+(221, 252, 2)
+opcode: (220, 252, 0) operands: (220, 220, 220), (95, 0, 0)
+True False False False False True
+[2, 34] mov reg[5], 95
+
+(221, 254, 0)
+opcode: (220, 252, 0) operands: (100, 100, 100), (100, 220, 0)
+True False False False True False
+[2, 35] mov reg[2], ram[reg[2] + reg[5]]
+
+(253, 124, 82)
+opcode: (252, 124, 80) operands: (100, 100, 100), (1, 0, 0)
+True False False False False True
+[2, 36] cmp reg[2], 1
+
+(221, 48, 96)
+opcode: (220, 48, 96) operands: (2, 0, 0), (255, 255, 255)
+True False False False False False
+[2, 37] je 2
+
+(252, 0, 0)
+opcode: (252, 0, 0) operands: (255, 255, 255), (255, 255, 255)
+False False False False False False
+[2, 38] wrong flag :C
+
+(223, 254, 0)
+opcode: (220, 252, 0) operands: (220, 220, 220), (0, 0, 3)
+True False False True True False
+[2, 39] mov reg[5], sp[3]
+
+(223, 254, 0)
+opcode: (220, 252, 0) operands: (100, 100, 100), (0, 0, 2)
+True False False True True False
+[2, 40] mov reg[2], sp[2]
+
+(223, 254, 0)
+opcode: (220, 252, 0) operands: (180, 180, 180), (0, 0, 0)
+True False False True True False
+[2, 41] mov reg[4], sp[0]
+
+(223, 252, 0)
+opcode: (220, 252, 0) operands: (20, 20, 20), (180, 180, 180)
+True False False True False False
+[2, 42] mov reg[0], reg[4]
+
+(223, 252, 0)
+opcode: (220, 252, 0) operands: (60, 60, 60), (100, 100, 100)
+True False False True False False
+[2, 43] mov reg[1], reg[2]
+
+(252, 0, 252)
+opcode: (252, 0, 252) operands: (0, 44, 128), (255, 255, 255)
+False False False False False False
+[2, 44] call [2, 0]
+
+(223, 51, 96)
+opcode: (220, 48, 96) operands: (36, 0, 0), (255, 255, 255)
+True True False True True False
+[2, 45] jmp 36
+
+(223, 254, 0)
+opcode: (220, 252, 0) operands: (220, 220, 220), (0, 0, 3)
+True False False True True False
+[2, 46] mov reg[5], sp[3]
+
+(223, 254, 0)
+opcode: (220, 252, 0) operands: (100, 100, 100), (0, 0, 0)
+True False False True True False
+[2, 47] mov reg[2], sp[0]
+
+(67, 224, 208)
+opcode: (64, 224, 208) operands: (100, 100, 100), (220, 220, 220)
+True False False True False False
+[2, 48] add reg[2], reg[5]
+
+(221, 254, 0)
+opcode: (220, 252, 0) operands: (100, 100, 100), (100, 0, 0)
+True False False False True False
+[2, 49] mov reg[2], ram[reg[2]]
+
+(255, 125, 80)
+opcode: (252, 124, 80) operands: (0, 0, 2), (100, 100, 100)
+True True False True False False
+[2, 50] cmp sp[2], reg[2]
+
+(223, 48, 96)
+opcode: (220, 48, 96) operands: (22, 0, 0), (255, 255, 255)
+True False False True False False
+[2, 51] je or jle 22
+
+(221, 254, 2)
+opcode: (220, 252, 0) operands: (100, 100, 100), (7, 2, 0)
+True False False False True True
+[2, 52] mov reg[2], ram[519]
+
+(253, 190, 0)
+opcode: (252, 188, 0) operands: (220, 220, 220), (100, 0, 1)
+True False False False True False
+[2, 53] mov reg[5], reg[2] + 1
+
+(222, 253, 1)
+opcode: (220, 252, 0) operands: (7, 2, 0), (220, 220, 220)
+False True True True False False
+[2, 54] mov ram[519], reg[5]
+
+(221, 252, 2)
+opcode: (220, 252, 0) operands: (220, 220, 220), (95, 0, 0)
+True False False False False True
+[2, 55] mov reg[5], 95
+
+(221, 254, 0)
+opcode: (220, 252, 0) operands: (100, 100, 100), (100, 220, 0)
+True False False False True False
+[2, 56] mov reg[2], ram[reg[2] + reg[5]]
+
+(253, 124, 82)
+opcode: (252, 124, 80) operands: (100, 100, 100), (2, 0, 0)
+True False False False False True
+[2, 57] cmp reg[2], 2
+
+(221, 48, 96)
+opcode: (220, 48, 96) operands: (2, 0, 0), (255, 255, 255)
+True False False False False False
+[2, 58] je 2
+
+(252, 0, 0)
+opcode: (252, 0, 0) operands: (255, 255, 255), (255, 255, 255)
+False False False False False False
+[2, 59] wrong flag :C
+
+(223, 254, 0)
+opcode: (220, 252, 0) operands: (100, 100, 100), (0, 0, 1)
+True False False True True False
+[2, 60] mov reg[2], sp[1]
+
+(159, 226, 188)
+opcode: (156, 224, 188) operands: (100, 100, 100), (0, 0, 3)
+True False False True True False
+[2, 61] sub reg[2], sp[3]
+
+(157, 224, 190)
+opcode: (156, 224, 188) operands: (100, 100, 100), (1, 0, 0)
+True False False False False True
+[2, 62] sub reg[2], 1
+
+(223, 252, 0)
+opcode: (220, 252, 0) operands: (220, 220, 220), (100, 100, 100)
+True False False True False False
+[2, 63] mov reg[5], reg[2]
+
+(223, 254, 0)
+opcode: (220, 252, 0) operands: (100, 100, 100), (0, 0, 3)
+True False False True True False
+[2, 64] mov reg[2], sp[3]
+
+(253, 190, 0)
+opcode: (252, 188, 0) operands: (180, 180, 180), (100, 0, 1)
+True False False False True False
+[2, 65] mov reg[4], reg[2] + 1
+
+(223, 254, 0)
+opcode: (220, 252, 0) operands: (100, 100, 100), (0, 0, 0)
+True False False True True False
+[2, 66] mov reg[2], sp[0]
+
+(67, 224, 208)
+opcode: (64, 224, 208) operands: (180, 180, 180), (100, 100, 100)
+True False False True False False
+[2, 67] add reg[4], reg[2]
+
+(223, 254, 0)
+opcode: (220, 252, 0) operands: (100, 100, 100), (0, 0, 2)
+True False False True True False
+[2, 68] mov reg[2], sp[2]
+
+(223, 252, 0)
+opcode: (220, 252, 0) operands: (20, 20, 20), (180, 180, 180)
+True False False True False False
+[2, 69] mov reg[0], reg[4]
+
+(223, 252, 0)
+opcode: (220, 252, 0) operands: (60, 60, 60), (100, 100, 100)
+True False False True False False
+[2, 70] mov reg[1], reg[2]
+
+(252, 0, 252)
+opcode: (252, 0, 252) operands: (0, 71, 128), (255, 255, 255)
+False False False False False False
+[2, 71] call [2, 0]
+
+(223, 51, 96)
+opcode: (220, 48, 96) operands: (9, 0, 0), (255, 255, 255)
+True True False True True False
+[2, 72] jmp 9
+
+(221, 254, 2)
+opcode: (220, 252, 0) operands: (100, 100, 100), (7, 2, 0)
+True False False False True True
+[2, 73] mov reg[2], ram[519]
+
+(253, 190, 0)
+opcode: (252, 188, 0) operands: (220, 220, 220), (100, 0, 1)
+True False False False True False
+[2, 74] mov reg[5], reg[2] + 1
+
+(222, 253, 1)
+opcode: (220, 252, 0) operands: (7, 2, 0), (220, 220, 220)
+False True True True False False
+[2, 75] mov ram[519], reg[5]
+
+(221, 252, 2)
+opcode: (220, 252, 0) operands: (220, 220, 220), (95, 0, 0)
+True False False False False True
+[2, 76] mov reg[5], 95
+
+(221, 254, 0)
+opcode: (220, 252, 0) operands: (100, 100, 100), (100, 220, 0)
+True False False False True False
+[2, 77] mov reg[2], ram[reg[2] + reg[5]]
+
+(253, 124, 82)
+opcode: (252, 124, 80) operands: (100, 100, 100), (3, 0, 0)
+True False False False False True
+[2, 78] cmp reg[2], 3
+
+(221, 48, 96)
+opcode: (220, 48, 96) operands: (2, 0, 0), (255, 255, 255)
+True False False False False False
+[2, 79] je 2
+
+(252, 0, 0)
+opcode: (252, 0, 0) operands: (255, 255, 255), (255, 255, 255)
+False False False False False False
+[2, 80] wrong flag :C
+
+(204, 204, 252)
+opcode: (204, 204, 252) operands: (4, 0, 0), (255, 255, 255)
+False False False False False False
+[2, 81] spi 4
+
+(128, 0, 128)
+opcode: (128, 0, 128) operands: (82, 0, 0), (255, 255, 255)
+False False False False False False
+[2, 82] ret 82
+

@@ -1,0 +1,28 @@
+// initialize variablews
+mov reg[1], 0
+mov reg[3], 0
+
+// input
+in reg[2]
+
+// modulo
+mov reg[4], reg[3]
+shr reg[4], 1
+add reg[4], reg[4]
+mov reg[5], reg[3]
+sub reg[5], reg[4]
+add reg[3], 1
+cmp reg[5], 1
+
+// if condition-like?
+jne 2
+add reg[1], reg[2]
+cmp reg[5], 0
+jne 2
+sub reg[1], reg[2]
+
+// output handling
+cmp reg[2], 0
+out reg[1]
+jne -15
+halt

@@ -1,0 +1,39 @@
+// sp[idx], idx < 0 holds temp
+// sp[idx], idx >= 0 holds ret addr, parameters, and ret val
+
+call [3, 0]
+mov sp[0], sp[0]
+call [6, 2]
+halt
+
+.loc [1, 0] // input
+
+mov sp[-1], reg[0]
+mov reg[0], -1
+
+add reg[0], 1
+in ram[reg[0]]
+cmp ram[reg[0]], -1
+jne -3
+
+mov sp[1], reg[0]
+mov reg[0], sp[-1]
+ret 7
+
+.loc [2, 0] // print
+
+mov sp[-1], reg[0]
+mov sp[-2], reg[1]
+
+mov reg[1], sp[1] // sp[1] = length of list
+mov reg[0], 0
+
+out ram[reg[0]]
+add reg[0], 1
+cmp reg[0], reg[1]
+jle -3
+
+mov reg[0], sp[-1]
+mov reg[1], sp[-2]
+\
+ret 10

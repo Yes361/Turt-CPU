@@ -1,0 +1,19 @@
+mov reg[0], 1
+mov reg[1], 1
+
+out reg[0]
+out reg[1]
+
+mov reg[2], reg[1]
+add reg[2], reg[0]
+mov reg[0], reg[1]
+mov reg[1], reg[2]
+
+out reg[2]
+
+in reg[5]
+cmp reg[5], 0
+jne -7
+
+out reg[1]
+halt

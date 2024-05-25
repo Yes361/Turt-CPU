@@ -1,0 +1,11 @@
+in reg[1]
+in reg[2]
+mov reg[3], 0
+
+sub reg[1], reg[2]
+add reg[3], 1
+cmp reg[1], 0
+
+jge -3
+out reg[3]
+halt

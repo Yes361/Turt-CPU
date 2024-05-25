@@ -1,0 +1,31 @@
+in reg[0]
+in reg[1]
+in reg[2]
+mov reg[3], 0
+
+cmp reg[0], 43
+jne 3
+add reg[1], reg[2]
+mov reg[3], reg[1]
+
+cmp reg[0], 45
+jne 3
+sub reg[1], reg[2]
+mov reg[3], reg[1]
+
+cmp reg[0], 47
+jne 5 // determine amt
+sub reg[1], reg[2]
+add reg[3], 1
+cmp reg[1], 0
+jge -3
+
+cmp reg[0], 42
+jne 5 // determine amt
+add reg[3], reg[1]
+sub reg[2], 1
+cmp reg[2], 0
+jge -3
+
+out reg[3]
+halt

@@ -1,0 +1,34 @@
+mov reg[0], 72
+out reg[0]
+
+mov reg[0], 101
+out reg[0]
+
+mov reg[0], 108
+out reg[0]
+
+mov reg[0], 108
+out reg[0]
+
+mov reg[0], 111
+out reg[0]
+
+mov reg[0], 32
+out reg[0]
+
+mov reg[0], 87
+out reg[0]
+
+mov reg[0], 111
+out reg[0]
+
+mov reg[0], 114
+out reg[0]
+
+mov reg[0], 108
+out reg[0]
+
+mov reg[0], 100
+out reg[0]
+
+halt

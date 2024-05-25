@@ -1,0 +1,31 @@
+// initialize variablews
+mov reg[1], 0
+mov ram[3], 0
+
+// input
+in reg[2]
+
+// modulo
+mov reg[4], ram[3]
+shr ram[3], 1
+add ram[3], ram[3]
+sub reg[4], ram[3]
+cmp reg[4], 1
+
+// if condition-like?
+jne 2
+add reg[1], reg[2]
+je 2
+sub reg[1], reg[2]
+
+call [12, 12]
+
+jne -11
+halt
+
+.loc [4, 0]
+
+// output handling
+cmp reg[2], 0
+out reg[1]
+ret 2

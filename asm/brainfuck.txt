@@ -1,0 +1,123 @@
+call [3, 0] // sp[0] has length of program
+mov reg[0], 0 // code execution ptr
+in reg[1] // memory ptr offset into ram
+in reg[3] // memory size
+
+// set memory buffer
+mov ram[ram[1] + reg[3]], 0
+sub reg[3], 1
+cmp reg[3], -1
+jne -3
+
+mov reg[2], 0 // the skip condition
+
+cmp ram[reg[0]], 91 // '['
+jne 10
+cmp reg[2], 0
+je 3
+add reg[2], 1
+jmp 5
+cmp ram[reg[1]], 0
+je -3
+mvsp -1
+movc sp[0], reg[0] + 1 // push addr onto stack
+jmp 6
+
+cmp ram[reg[0]], 93 // ']'
+jne 12
+cmp reg[2], 0
+je 3
+sub reg[2], 1
+jmp 7
+cmp ram[reg[1]], 0
+jne 3
+mvsp 1
+jmp 3
+mov reg[0], sp[0]
+sub reg[0], 1
+jmp 6
+
+cmp reg[2], 0
+jne 4
+
+cmp ram[reg[0]], 44 // ','
+jne 3
+in ram[reg[1]]
+jmp 4
+
+cmp ram[reg[0]], 46 // '.'
+jne 3
+out ram[reg[1]]
+jmp 4
+
+cmp ram[reg[0]], 62 // '>'
+jne 3
+add reg[1], 1
+jmp 4
+
+cmp ram[reg[0]], 60 // '<'
+jne 3
+sub reg[1], 1
+jmp 7
+
+cmp ram[reg[0]], 43 // '+'
+jne 6
+add ram[reg[1]], 1
+cmp ram[reg[1]], 256 // hardcode byte size limit
+jle 2
+mov ram[reg[1]], 0
+jmp 7
+
+cmp ram[reg[0]], 45 // '-'
+jne 6
+sub ram[reg[1]], 1 
+cmp ram[reg[1]], -1 // hardcode byte size limit
+jge 2
+mov ram[reg[1]], 255
+jmp 2
+
+halt // halt early for invalid commands
+
+add reg[0], 1
+// out reg[0]
+// out ram[reg[0]]
+jmp -58
+
+halt // ,[.,]
+
+
+.loc [1, 0]
+
+mov sp[1], reg[0]
+mov reg[0], -1
+
+add reg[0], 1
+in ram[reg[0]]
+
+cmp ram[reg[0]], 44 // ','
+je 17
+
+cmp ram[reg[0]], 46 // '.'
+je 15
+
+cmp ram[reg[0]], 91 // '['
+je 13
+
+cmp ram[reg[0]], 93 // ']'
+je 11
+
+cmp ram[reg[0]], 43 // '+'
+je 9
+
+cmp ram[reg[0]], 45 // '-'
+je 7
+
+cmp ram[reg[0]], 62 // '>'
+je 5
+
+cmp ram[reg[0]], 60 // '<'
+je 3
+
+mov reg[0], sp[1]
+ret 21
+jmp -20
