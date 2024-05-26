@@ -1,11 +1,9 @@
-import turtle
+from instructions import Opcode
 from PIL import Image
-from assembly import instructions
-Opcode = instructions.Opcode
+import turtle
 
 def hexToRgb(hx):
     return (int(hx[1:3], 16), int(hx[3:5], 16), int(hx[5:7], 16))
-
 
 # Get the canvas color at |turt|'s position.
 def getColor(turt):
@@ -18,7 +16,6 @@ def getColor(turt):
         if color and color[0] == "#":
             return hexToRgb(color)
     return (255, 255, 255)
-
 
 # Draw the image file from |path| with |turt|
 def drawImg(path, turt):
@@ -53,25 +50,14 @@ pTurt.pendown()
 
 mTurt = None
 
-def loadM(flag, file='m.png'):
+def loadM(file='m.png'):
     global mTurt
     mTurt = turtle.Turtle()
     mTurt.speed(0)
     mTurt.pensize(5)
     mTurt.penup()
     mTurt.forward(12 * 5)
-    w, h = drawImg(file, mTurt)
-    mTurt.pendown()
-    for i in range(len(flag)):
-        mTurt.pencolor((ord(flag[i]), 0, 0))
-        mTurt.forward(5)
-        if (i + 1) % w == 0:
-            mTurt.penup()
-            mTurt.back(w * 5)
-            mTurt.right(90)
-            mTurt.forward(5)
-            mTurt.left(90)
-            mTurt.pendown()
+    drawImg(file, mTurt)
     mTurt.penup()
     mTurt.back(10 * 5)
     mTurt.left(90)
@@ -90,7 +76,6 @@ def readM(a):
     mTurt.right(90)
     return c
 
-
 def writeM(a, c):
     mTurt.right(90)
     mTurt.forward((a // 25) * 5)
@@ -106,9 +91,7 @@ def writeM(a, c):
     mTurt.forward((a % 25) * 5)
     mTurt.left(180)
 
-
 sTurt = None
-
 
 def loadS():
     global sTurt
@@ -126,13 +109,11 @@ def loadS():
     sTurt.forward(120 * 5)
     sTurt.penup()
 
-
 def readS(a):
     sTurt.forward(a * 5)
     c = getColor(sTurt)
     sTurt.back(a * 5)
     return c
-
 
 def writeS(a, c):
     sTurt.forward(a * 5)
@@ -142,9 +123,7 @@ def writeS(a, c):
     sTurt.penup()
     sTurt.back(a * 5)
 
-
 rTurt = None
-
 
 def loadR():
     global rTurt
@@ -171,7 +150,6 @@ def loadR():
     rTurt.forward(6 * 5)
     rTurt.right(90)
 
-
 def readR(n):
     rTurt.forward((n % 3) * 10)
     rTurt.right(90)
@@ -183,7 +161,6 @@ def readR(n):
     rTurt.forward((n // 3) * 10)
     rTurt.right(90)
     return c
-
 
 def writeR(n, c):
     rTurt.forward((n % 3) * 10)
@@ -199,9 +176,7 @@ def writeR(n, c):
     rTurt.forward((n // 3) * 10)
     rTurt.right(90)
 
-
 cTurt = None
-
 
 def loadC(file='c.png'):
     global cTurt
@@ -214,12 +189,10 @@ def loadC(file='c.png'):
     cTurt.right(90)
     drawImg(file, cTurt)
 
-
 def getRNum(colorOrInt):
     if type(colorOrInt) == tuple:
         colorOrInt = colorOrInt[0]
     return (colorOrInt - 20) // 40
-
 
 def read(op, isR, isP, isC):
     if isP:
@@ -251,7 +224,6 @@ def readPA(op, isC):
 def readRVal(rNum):
     return readC(readR(rNum))
 
-
 def write(op, val, isR, isP, isC):
     if isP:
         writePVal(op, val, isR, isC)
@@ -270,28 +242,21 @@ def writePVal(op, val, isS, isC):
     else:
         writeM(a, cToColor(val))
 
-
-
-
-
 def readC(op):
     c = op[0] + (op[1] << 8) + (op[2] << 16)
     if c >= (256**3) // 2:
         c = -((256**3) - c)
     return c
 
-
 def readOneByteC(val):
     if val > 256 // 2:
         return -(256 - val)
     return val
 
-
 def cToColor(val):
     if val < 0:
         val = 256**3 + val
     return [val % 256, (val >> 8) % 256, (val >> 16) % 256]
-
 
 def getGridOperand(rgb, isC, withVal):
     if isC:
@@ -320,7 +285,6 @@ def getGridOperand(rgb, isC, withVal):
         GridString += f"={readPA(rgb, isC)}"
     return GridString
 
-
 def operandType(isR, isP, isC, operand, isRead, withVal, outputAscii=False):
     if isP:
         imm = getGridOperand(operand, isC, False)
@@ -344,7 +308,6 @@ def operandType(isR, isP, isC, operand, isRead, withVal, outputAscii=False):
     elif isC and isRead:
         return readC(operand)
 
-
 def printALUoperands(
     opcode, operand1, operand2, isR1, isP1, isC1, isR2, isP2, isC2, withVal=False
 ):
@@ -354,7 +317,6 @@ def printALUoperands(
         else operandType(isR2, isP2, isC2, operand2, True, withVal)
     )
     return f"{operandType(isR1, isP1, isC1, operand1, True, withVal)}, {secondOperand}"
-
 
 def determineJump(isR1, isP1, isR2, isP2):
     if (isR1 and isP1) or (isR1 and isR2 and isP2):
@@ -372,16 +334,13 @@ def determineJump(isR1, isP1, isR2, isP2):
     if isP1:
         return "jne"
 
-
 def getCoords():
     x = round((cTurt.pos()[0] - sx) / 15)
     y = round((sy - cTurt.pos()[1]) / 5)
     return f"[{x}, {y}]"
 
-
 def printInstruction(opcode, operand1, operand2):
     return f"opcode: {opcode} operands: {operand1}, {operand2}"
-
 
 def memoryDump(file=None, infile='c.png'):
     if file != None:
@@ -636,18 +595,10 @@ def run(file=None):
         cTurt.forward(5)
         cTurt.left(90)
 
-
-# flag = input("Flag: ")
-# if len(flag) != 35:
-#     print("Wrong len :(")
-#     exit(0)
-
-flag = 'a' * 35
-
-loadM(flag, file=r'C:\Users\NAZRU\CS projects\Turtle CTF\m.png')
+loadM(file=r'm.png')
 loadS()
 loadR()
-loadC(r'C:\Users\NAZRU\CS projects\Turtle CTF\files\smthn.png')
+loadC(r'files\smthn.png')
 
-# memoryDump(file=r'C:\Users\NAZRU\CS projects\Turtle CTF\files\memory.txt', infile='c.png')
+memoryDump(file=r'files\memory.txt', infile='c.png')
 run(r"files/process.txt")

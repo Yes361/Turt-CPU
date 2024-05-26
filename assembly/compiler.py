@@ -1,5 +1,5 @@
-from parse import Parser, standard_parser_rules
-from lexer import Lexer, standard_lexer_rules
+from .parse import Parser, standard_parser_rules
+from .lexer import Lexer, standard_lexer_rules
 import logging
 
 class Compiler:

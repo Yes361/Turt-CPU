@@ -1,4 +1,4 @@
-from compiler import Compiler, standard_lexer_rules, standard_parser_rules
+from assembly import Compiler, standard_lexer_rules, standard_parser_rules
 from dataclasses import dataclass, field
 from instructions import Opcode, Operand
 from PIL import Image

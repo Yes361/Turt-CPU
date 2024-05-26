@@ -1,5 +1,5 @@
+from .symbols import Symbol
 from dataclasses import dataclass, field
-from symbols import Symbol
 import logging
 import re
 
