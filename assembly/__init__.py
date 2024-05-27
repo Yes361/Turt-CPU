@@ -1,3 +1,4 @@
+from .exceptions import LexerError
 from .symbols import Symbol
 from .lexer import Lexer
 from .parse import Parser
@@ -8,5 +9,6 @@ __all__ = [
     Lexer, Parser, 
     standard_lexer_rules, 
     standard_parser_rules, 
-    Symbol
+    Symbol,
+    LexerError
 ]

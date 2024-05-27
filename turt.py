@@ -58,11 +58,6 @@ def loadM(file='m.png'):
     mTurt.penup()
     mTurt.forward(12 * 5)
     drawImg(file, mTurt)
-    mTurt.penup()
-    mTurt.back(10 * 5)
-    mTurt.left(90)
-    mTurt.forward(5)
-    mTurt.right(90)
 
 def readM(a):
     mTurt.forward((a % 25) * 5)

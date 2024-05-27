@@ -1,12 +1,12 @@
 from .symbols import Symbol
+from .exceptions import LexerError
 from dataclasses import dataclass, field
 from typing import List
 import re
 
-
 @dataclass
 class Rule:
-    rule: any
+    regex: any
     type: any
     valueExtractor: callable = None
 
@@ -25,57 +25,66 @@ class Lexer:
     rules: any
     text: str = None
     index: int = 0
-    last_new_line: int = 0
     _current_token: any = field(default_factory=lambda: Token())
     
     def error(self, text: str, index: int, msg: str) -> None:
-        raise Exception(msg)
-
-    def extract_token(self, text: str, index: int, last_new_line: int = 0) -> tuple:
-        if text:
-            new_line = re.compile(r'\r?\n')
-            if new_line.match(text[index:]):
-                last_new_line = index
-            lines = len(new_line.findall(text[:index])) + 1
+        raise LexerError(msg)
+    
+    def extract_col(self, text: str, index: int) -> tuple:
+        lines = 0
+        Match = None
+        for Match in re.finditer(r'\r?\n', text[:index]):
+            lines += 1
+        last_new_line = Match.span()[0] if Match else 0
             
-            for query in self.rules:
-                if value := query.rule.match(text[index:]):
-                    token = value.group()
-                    token_length = len(token)
-                    
-                    if not query.type:
-                        return self.extract_token(text, index + token_length, last_new_line)
-                    if query.valueExtractor:
-                        token = query.valueExtractor(token)
-                    return Token(query.type, token, lines, col=index - last_new_line, start=index, end=index + token_length, length=token_length), index + token_length, last_new_line
+        return last_new_line, lines
+
+    def extract_token(self, text: str, index: int) -> tuple:
+        if not text:
+            return Token(Symbol.EOF), 0
+        
+        last_new_line, lines = self.extract_col(text, index)
+        
+        for query in self.rules:
+            if value := query.regex.match(text[index:]):
+                token_value = value.group()
+                token_length = len(token_value)
+                
+                if not query.type:
+                    return self.extract_token(text, index + token_length)
+                if query.valueExtractor:
+                    token_value = query.valueExtractor(token_value)
+                token =  Token(query.type, token_value, lines, index - last_new_line, index, index + token_length, token_length)
+                return token, index + token_length
         
         if index < len(text):
             self.error(text, index, 'bruh.')
-        return Token(Symbol.EOF), index, last_new_line
+        return Token(Symbol.EOF), 0
 
-    def tokenize(self, text: str) -> any:
+    def tokenize(self, text: str) -> List[Token]:
         tokens = []
         index = 0
         token = Token()
-        last_new_line = 0
         while token.type != Symbol.EOF:
-            token, index, last_new_line = self.extract_token(text, index, last_new_line)
+            token, index = self.extract_token(text, index)
             tokens.append(token)
         return tokens
 
     def get_next_token(self) -> Token:
-        self._current_token, self.index, self.last_new_line = self.extract_token(self.text, self.index, self.last_new_line)
+        self._current_token, self.index = self.extract_token(self.text, self.index)
         return self._current_token
     
     def get_current_token(self) -> Token:
         return self._current_token
     
-    def expect_next_token(self, type: any = None, value: any = None):
+    def expect_next_token(self, type: any = None, value: any = None) -> bool:
         if not self._current_token:
             return False
         return (self._current_token.value == value or value == None) and (self._current_token.type == type or type == None)
     
     def consume_token(self, *args, **kwargs) -> Token:
+        # if self.index == 0:
+        #     self.get_next_token()
         if self.expect_next_token(*args, **kwargs):
             token = self._current_token
             self.get_next_token()
@@ -89,7 +98,6 @@ class Lexer:
         
     def reset(self) -> None:
         self.index = 0
-        self.last_new_line = 0
         self._current_token = Token()
 
     def __iter__(self) -> any:

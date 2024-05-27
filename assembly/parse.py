@@ -16,6 +16,9 @@ class ParserNode:
 class ParserType:
     source: any = None
     type: any = Symbol.token
+    
+# @dataclass
+# class ParserRules
 
 
 class Parser:

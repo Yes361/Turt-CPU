@@ -68,16 +68,13 @@ class TurtleCompiler(Compiler):
             if not self.Lexer.consume_token(value="\n"):
                 break
 
-        # while token := self.Lexer.get_next_token():
-        #     print(token)
-
         self.convert_to_img(outfile)
 
     def convert_to_img(self, outfile=None):
         # TODO: this is a hotfix
         if len(self.instructions) == 0:
             return
-
+        
         image = Image.new("RGB", (51, 102), "white")
 
         for inst in self.instructions:
