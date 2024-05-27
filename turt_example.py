@@ -57,6 +57,7 @@ class TurtleCompiler(Compiler):
         self.labels = {}
         self.instructions = []
         self.Lexer.text = text
+        self.Lexer.get_next_token()
         while True:
 
             if self.consume_directive():

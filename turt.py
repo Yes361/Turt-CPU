@@ -598,7 +598,7 @@ def run(file=None):
 loadM(file=r'm.png')
 loadS()
 loadR()
-loadC(r'files\smthn.png')
+loadC(r'smthn.png')
 
 memoryDump(file=r'files\memory.txt', infile='c.png')
 run(r"files/process.txt")

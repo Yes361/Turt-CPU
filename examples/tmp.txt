@@ -2,6 +2,7 @@ in reg[0]
 mov reg[1], 0
 move -1, 180
 .l1
+
 move reg[0], reg[1]
 add reg[1], 1
 cmp reg[1], 360

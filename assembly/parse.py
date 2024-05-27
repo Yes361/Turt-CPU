@@ -19,8 +19,6 @@ class ParserType:
 
 
 class Parser:
-    NULL = (None, 0, False)
-
     def __init__(self, lexer, rules):
         self.Lexer = lexer
         self.rules = rules["rules"]
@@ -44,9 +42,6 @@ class Parser:
                 print(f"{space}|={node.type}", file=outFile)
             for i in range(len(node.children) - 1, -1, -1):
                 queue.append((node.children[i], depth + 1))
-
-    # def visualize_parse_tree(self, root, outFile=None):
-    #     self.top_down_parse()
 
     def parse(self, text):
         return self.top_down_parse(self.goal, text)
@@ -167,8 +162,6 @@ class Parser:
     def bottom_up_parse(self, tokens):
         pass
 
-
-# TODO: Add Grammar Parser
 standard_parser_rules = {
     "rules": {
         "statementList": [
@@ -179,19 +172,15 @@ standard_parser_rules = {
                 ParserType("instruction", Symbol.nonterminal),
                 ParserType(type=Symbol.RPAREN),
                 ParserType(type=Symbol.REPEAT),
-                # ParserType("statementList", Symbol.nonterminal),
             ],
             [],
         ],
         "instruction": [
             [
-                # Symbol.LPAREN,
                 ParserType("instruction"),
                 ParserType("operand", Symbol.nonterminal),
                 ParserType(","),
                 ParserType("operand", Symbol.nonterminal),
-                # Symbol.RPAREN,
-                # Symbol.REPEAT
             ]
         ],
         "operand": [
@@ -227,19 +216,7 @@ standard_parser_rules = {
                 ParserType("float", Symbol.nonterminal),
                 ParserType("]"),
             ],
-            # [
-            #     ParserType("["),
-            #     ParserType(type=Symbol.LPAREN),
-            #     ParserType("operand", Symbol.nonterminal),
-            #     ParserType("-"),
-            #     ParserType(type=Symbol.RPAREN),
-            #     # ParserType(type=Symbol.REPEAT),
-            #     ParserType("float", Symbol.nonterminal),
-            #     ParserType("]"),
-            # ],
         ],
-        # "random shit": [
-        # ]
         "float": [[ParserType("number-literal")]],
     },
     "productionGoal": "statementList",
